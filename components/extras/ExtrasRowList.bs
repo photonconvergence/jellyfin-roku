@@ -124,7 +124,7 @@ function onSpecialFeaturesLoaded()
             m.top.visible = true
             item.Id = item.json.Id
             item.labelText = item.json.Name
-            item.subTitle = ""
+            item.subTitle = `${tr(item.json.ExtraType)}`
             item.Type = item.json.Type
             item.imageWidth = 450
             row.appendChild(item)

@@ -35,7 +35,12 @@ sub itemContentChanged()
     else
         indexNumber = ""
     end if
-    m.title.text = indexNumber + item.title
+    if isValid(itemData.ExtraType)
+        extraType = ` - ${tr(itemData.ExtraType)}`
+    else
+        extraType = ""
+    end if
+    m.title.text = `${indexNumber} ${item.title}${extraType}`
     m.overview.text = item.overview
 
     if isValid(itemData.PremiereDate)

@@ -461,7 +461,7 @@
         <message>
             <source>Unknown</source>
             <translation>Unknown</translation>
-            <extracomment>Title for a cast member for which we have no information for</extracomment>
+            <extracomment>Title for a cast member or extra feature for which we have no information</extracomment>
         </message>
         <message>
             <source>The requested content does not exist on the server</source>
@@ -1255,6 +1255,61 @@
             <source>... (Press * to read more)</source>
             <translation>... (Press * to read more)</translation>
             <extracomment>Ellipsis Text for when text overflows its container</extracomment>
+        </message>
+        <message>
+            <source>Clip</source>
+            <translation>Clip</translation>
+            <extracomment>Type of special feature</extracomment>
+        </message>
+        <message>
+            <source>Trailer</source>
+            <translation>Trailer</translation>
+            <extracomment>Type of special feature</extracomment>
+        </message>
+        <message>
+            <source>BehindTheScenes</source>
+            <translation>Behind the Scenes</translation>
+            <extracomment>Type of special feature</extracomment>
+        </message>
+        <message>
+            <source>DeletedScene</source>
+            <translation>Deleted Scene</translation>
+            <extracomment>Type of special feature</extracomment>
+        </message>
+        <message>
+            <source>Interview</source>
+            <translation>Interview</translation>
+            <extracomment>Type of special feature</extracomment>
+        </message>
+        <message>
+            <source>Scene</source>
+            <translation>Scene</translation>
+            <extracomment>Type of special feature</extracomment>
+        </message>
+        <message>
+            <source>Sample</source>
+            <translation>Sample</translation>
+            <extracomment>Type of special feature</extracomment>
+        </message>
+        <message>
+            <source>ThemeSong</source>
+            <translation>Theme Song</translation>
+            <extracomment>Type of special feature</extracomment>
+        </message>
+        <message>
+            <source>ThemeVideo</source>
+            <translation>Theme Video</translation>
+            <extracomment>Type of special feature</extracomment>
+        </message>
+        <message>
+            <source>Featurette</source>
+            <translation>Featurette</translation>
+            <extracomment>Type of special feature</extracomment>
+        </message>
+        <message>
+            <source>Short</source>
+            <translation>Short</translation>
+            <extracomment>Type of special feature</extracomment>
         </message>
     </context>
 </TS>
