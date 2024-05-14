@@ -35,7 +35,7 @@ sub itemContentChanged()
     else
         indexNumber = ""
     end if
-    if isValid(itemData.ExtraType)
+    if isValid(itemData.ExtraType) and itemData.ExtraType <> "Unknown"
         extraType = ` - ${tr(itemData.ExtraType)}`
     else
         extraType = ""

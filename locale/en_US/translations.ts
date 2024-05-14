@@ -461,7 +461,7 @@
         <message>
             <source>Unknown</source>
             <translation>Unknown</translation>
-            <extracomment>Title for a cast member or extra feature for which we have no information</extracomment>
+            <extracomment>Title for a cast member for which we have no information</extracomment>
         </message>
         <message>
             <source>The requested content does not exist on the server</source>
