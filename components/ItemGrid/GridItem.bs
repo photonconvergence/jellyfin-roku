@@ -20,9 +20,6 @@ sub init()
     m.checkmark.width = 90
     m.checkmark.height = 60
 
-    m.itemText.translation = [0, m.itemPoster.height + 7]
-    m.itemText.visible = m.gridTitles = "showalways"
-
     ' Add some padding space when Item Titles are always showing
     if m.itemText.visible then m.itemText.maxWidth = 250
 
@@ -37,6 +34,9 @@ sub init()
             m.gridTitles = m.itemGrid.gridTitles
         end if
     end if
+
+    m.itemText.translation = [0, m.itemPoster.height + 7]
+    m.itemText.visible = m.gridTitles = "showalways"
 
 end sub
 
