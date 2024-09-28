@@ -611,11 +611,18 @@ sub onState(msg)
     m.osd.playbackState = m.top.state
 
     ' When buffering, start timer to monitor buffering process
-    if m.top.state = "buffering" and m.bufferCheckTimer <> invalid
+    if m.top.state = "buffering"
+        ' start buffer timer
+        if isValid(m.bufferCheckTimer)
+            m.bufferCheckTimer.control = "start"
+            m.bufferCheckTimer.ObserveField("fire", "bufferCheck")
+        end if
 
-        ' start timer
-        m.bufferCheckTimer.control = "start"
-        m.bufferCheckTimer.ObserveField("fire", "bufferCheck")
+        ' update server if needed
+        if not m.playReported
+            m.playReported = true
+            ReportPlayback("start")
+        end if
     else if m.top.state = "error"
         if not m.playReported and m.top.transcodeAvailable
             m.top.retryWithTranscoding = true ' If playback was not reported, retry with transcoding
