@@ -655,8 +655,6 @@ sub onState(msg)
     else if m.top.state = "finished"
         m.playbackTimer.control = "stop"
         ReportPlayback("finished")
-        m.top.control = "stop"
-        m.top.backPressed = true ' exit video player
     end if
     m.log.debug("end onState()", m.top.state)
 end sub
