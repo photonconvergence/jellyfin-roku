@@ -1,7 +1,9 @@
 import "pkg:/source/utils/misc.bs"
 import "pkg:/source/utils/config.bs"
+import "pkg:/source/roku_modules/log/LogMixin.brs"
 
 sub init()
+    m.log = log.Logger("VideoPlayerView")
     ' Hide the overhang on init to prevent showing 2 clocks
     m.top.getScene().findNode("overhang").visible = false
     m.currentItem = m.global.queueManager.callFunc("getCurrentItem")
@@ -600,6 +602,7 @@ end sub
 '
 ' When Video Player state changes
 sub onState(msg)
+    m.log.debug("start onState()", m.top.state)
     if isValid(m.captionTask)
         m.captionTask.playerState = m.top.state + m.top.globalCaptionMode
     end if
@@ -649,15 +652,21 @@ sub onState(msg)
         m.playbackTimer.control = "stop"
         ReportPlayback("stop")
         m.playReported = false
+    else if m.top.state = "finished"
+        m.playbackTimer.control = "stop"
+        ReportPlayback("finished")
+        m.top.control = "stop"
+        m.top.backPressed = true ' exit video player
     end if
-
+    m.log.debug("end onState()", m.top.state)
 end sub
 
 '
 ' Report playback to server
 sub ReportPlayback(state = "update" as string)
-
     if m.top.position = invalid then return
+
+    m.log.debug("start ReportPlayback()", state, int(m.top.position))
 
     params = {
         "ItemId": m.top.id,
@@ -677,6 +686,8 @@ sub ReportPlayback(state = "update" as string)
     playstateTask = m.global.playstateTask
     playstateTask.setFields({ status: state, params: params })
     playstateTask.control = "RUN"
+
+    m.log.debug("end ReportPlayback()", state, int(m.top.position))
 end sub
 
 '
