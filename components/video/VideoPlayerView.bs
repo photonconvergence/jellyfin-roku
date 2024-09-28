@@ -666,6 +666,7 @@ sub onState(msg)
     else if m.top.state = "finished"
         m.playbackTimer.control = "stop"
         ReportPlayback("finished")
+        m.top.backPressed = true ' force exit from video player to set TV back to SDR
     end if
     m.log.debug("end onState()", m.top.state)
 end sub
