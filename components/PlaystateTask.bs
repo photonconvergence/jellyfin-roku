@@ -8,9 +8,9 @@ end sub
 sub PlaystateUpdate()
     if m.top.status = "start"
         url = "Sessions/Playing"
-    else if m.top.status = "stop"
+    else if m.top.status = "stop" or m.top.status = "finished"
         url = "Sessions/Playing/Stopped"
-    else if m.top.status = "update" or m.top.status = "finished"
+    else if m.top.status = "update"
         url = "Sessions/Playing/Progress"
     else
         ' Unknown State
