@@ -1271,5 +1271,55 @@
             <translation>Ratings for how good a movie is</translation>
             <extracomment>User Setting - Setting description</extracomment>
         </message>
+        <message>
+            <source>View All Next Up</source>
+            <translation>View All Next Up</translation>
+            <extracomment>Title for viewing all episodes available in the Next Up section</extracomment>
+        </message>
+        <message>
+            <source>Rewatching Next Up</source>
+            <translation>Rewatching Next Up</translation>
+            <extracomment>User Setting - Setting title</extracomment>
+        </message>
+        <message>
+            <source>Show already watched episodes in 'Next Up' sections.</source>
+            <translation>Show already watched episodes in 'Next Up' sections.</translation>
+            <extracomment>User Setting - Setting description</extracomment>
+        </message>
+        <message>
+            <source>Play Next Episode Automatically</source>
+            <translation>Play Next Episode Automatically</translation>
+            <extracomment>User Setting - Setting title</extracomment>
+        </message>
+        <message>
+            <source>When finished playing a single episode, play the next one automatically.</source>
+            <translation>When finished playing a single episode, play the next one automatically.</translation>
+            <extracomment>User Setting - Setting description</extracomment>
+        </message>
+        <message>
+            <source>Episode Images Next Up</source>
+            <translation>Episode Images Next Up</translation>
+            <extracomment>User Setting - Setting title</extracomment>
+        </message>
+        <message>
+            <source>What type of images to use for Episodes shown in the 'Next Up' and 'Continue Watching' sections.</source>
+            <translation>What type of images to use for Episodes shown in the 'Next Up' and 'Continue Watching' sections.</translation>
+            <extracomment>User Setting - Setting description</extracomment>
+        </message>
+        <message>
+            <source>Use Web Client Setting</source>
+            <translation>Use Web Client Setting</translation>
+            <extracomment>User Setting - Setting option title</extracomment>
+        </message>
+        <message>
+            <source>Use Episode Image</source>
+            <translation>Use Episode Image</translation>
+            <extracomment>User Setting - Setting option title</extracomment>
+        </message>
+        <message>
+            <source>Use Show Image</source>
+            <translation>Use Show Image</translation>
+            <extracomment>User Setting - Setting option title</extracomment>
+        </message>
     </context>
 </TS>

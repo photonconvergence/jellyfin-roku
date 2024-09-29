@@ -175,6 +175,27 @@
                 "default": "30"
             },
             {
+                "title": "Play Next Episode Automatically",
+                "description": "When finished playing a single episode, play the next one automatically.",
+                "settingName": "playback.playnextepisode",
+                "type": "radio",
+                "default": "webclient",
+                "options": [
+                    {
+                        "title": "Use Web Client Setting",
+                        "id": "webclient"
+                    },
+                    {
+                        "title": "Enabled",
+                        "id": "enabled"
+                    },
+                    {
+                        "title": "Disabled",
+                        "id": "disabled"
+                    }
+                ]
+            },
+            {
                 "title": "Preferred Audio Codec",
                 "description": "Use the selected audio codec for transcodes. If the device or stream does not support it, a fallback codec will be used.",
                 "settingName": "playback.preferredAudioCodec",
@@ -221,6 +242,27 @@
                 "description": "Settings relating to the appearance of the Home screen and the program in general.",
                 "children": [
                     {
+                        "title": "Episode Images Next Up",
+                        "description": "What type of images to use for Episodes shown in the 'Next Up' and 'Continue Watching' sections.",
+                        "settingName": "ui.general.episodeimagesnextup",
+                        "type": "radio",
+                        "default": "webclient",
+                        "options": [
+                            {
+                                "title": "Use Web Client Setting",
+                                "id": "webclient"
+                            },
+                            {
+                                "title": "Use Episode Image",
+                                "id": "episode"
+                            },
+                            {
+                                "title": "Use Show Image",
+                                "id": "show"
+                            }
+                        ]
+                    },
+                    {
                         "title": "Hide Clock",
                         "description": "Hide all clocks in Jellyfin. Jellyfin will need to be closed and reopened for changes to take effect.",
                         "settingName": "ui.design.hideclock",
@@ -233,6 +275,13 @@
                         "settingName": "ui.details.maxdaysnextup",
                         "type": "integer",
                         "default": "365"
+                    },
+                    {
+                        "title": "Rewatching Next Up",
+                        "description": "Show already watched episodes in 'Next Up' sections.",
+                        "settingName": "ui.details.enablerewatchingnextup",
+                        "type": "bool",
+                        "default": "false"
                     },
                     {
                         "title": "Show What's New Popup",

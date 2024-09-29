@@ -14,7 +14,7 @@
     </message>
     <message>
         <source>Connect to Server</source>
-        <translation>Připojit se k serveru</translation>
+        <translation>Připojit k serveru</translation>
     </message>
     <message>
         <source>Ends at %1</source>
@@ -34,7 +34,7 @@
     </message>
     <message>
         <source>Login attempt failed.</source>
-        <translation>Pokus o přihlášení selhal.</translation>
+        <translation>Přihlášení selhalo.</translation>
     </message>
     <message>
         <source>OK</source>
@@ -74,7 +74,7 @@
     </message>
     <message>
         <source>Watched</source>
-        <translation>Shlédnuté</translation>
+        <translation>Zhlédnuto</translation>
     </message>
     <message>
         <source>Change Server</source>
@@ -114,7 +114,7 @@
     </message>
     <message>
         <source>Enter a username</source>
-        <translation>Zadejte jméno</translation>
+        <translation>Zadejte přihlašovací jméno</translation>
     </message>
     <message>
         <source>Enter a password</source>
@@ -269,7 +269,7 @@
     </message>
     <message>
         <source>Extras</source>
-        <translation>Doplňky</translation>
+        <translation>Doplňky (if meant to be used like in settings), Extra (if meant for like series/movies, extras episodes)</translation>
     </message>
     <message>
         <source>Episodes</source>
@@ -1279,6 +1279,50 @@
         <source>The source file is entirely compatible with this client and the session is receiving the file without modifications.</source>
         <translation>Zdrojový soubor je zcela kompatibilní s tímto klientem a relace přijímá soubor bez úprav.</translation>
         <extracomment>Direct play info box text in GetPlaybackInfoTask.brs</extracomment>
+    </message>
+    <message>
+        <source>Show already watched episodes in &apos;Next Up&apos; sections.</source>
+        <translation>Zobrazit již zhlédnuté díly v sekci &apos;Další díly&apos;.</translation>
+        <extracomment>User Setting - Setting description</extracomment>
+    </message>
+    <message>
+        <source>Rewatching Next Up</source>
+        <translation>Sledujte znovu Další díly</translation>
+        <extracomment>User Setting - Setting title</extracomment>
+    </message>
+    <message>
+        <source>Welcome to version</source>
+        <translation>Vítejte ve verzi</translation>
+        <extracomment>WhatsNewDialog title - Welcome to version 2.0.0</extracomment>
+    </message>
+    <message>
+        <source>To view a complete list of changes visit</source>
+        <translation>Pro zobrazení úplného seznamu změn navštivte</translation>
+        <extracomment>WhatsNewDialog body text preceding the changelog URL</extracomment>
+    </message>
+    <message>
+        <source>View All Next Up</source>
+        <translation>Zobrazit všechny další díly</translation>
+    </message>
+    <message>
+        <source>Episode Images Next Up</source>
+        <translation>Obrázky dílů v sekci Další díly</translation>
+    </message>
+    <message>
+        <source>What type of images to use for Episodes shown in the &apos;Next Up&apos; and &apos;Continue Watching&apos; sections.</source>
+        <translation>Jaký typ obrázků se má zobrazovat u dílů v sekcích &quot;Další díly&quot; a &quot;Pokračovat ve sledování&quot;.</translation>
+    </message>
+    <message>
+        <source>Use Web Client Setting</source>
+        <translation>Použít nastavení webového klienta</translation>
+    </message>
+    <message>
+        <source>Use Episode Image</source>
+        <translation>Použít obrázek dílu</translation>
+    </message>
+    <message>
+        <source>Use Show Image</source>
+        <translation>Použít obrázek seriálu</translation>
     </message>
 </context>
 <context>

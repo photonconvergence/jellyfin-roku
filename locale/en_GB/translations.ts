@@ -1264,6 +1264,56 @@
         <translation>Ratings for how good a movie is</translation>
         <extracomment>User Setting - Setting description</extracomment>
     </message>
+    <message>
+        <source>Rewatching Next Up</source>
+        <translation>Rewatching Next Up</translation>
+        <extracomment>User Setting - Setting title</extracomment>
+    </message>
+    <message>
+        <source>Welcome to version</source>
+        <translation>Welcome to version</translation>
+        <extracomment>WhatsNewDialog title - Welcome to version 2.0.0</extracomment>
+    </message>
+    <message>
+        <source>To view a complete list of changes visit</source>
+        <translation>To view a complete list of changes visit</translation>
+        <extracomment>WhatsNewDialog body text preceding the changelog URL</extracomment>
+    </message>
+    <message>
+        <source>Show already watched episodes in &apos;Next Up&apos; sections.</source>
+        <translation>Show already watched episodes in &apos;Next Up&apos; sections.</translation>
+        <extracomment>User Setting - Setting description</extracomment>
+    </message>
+    <message>
+        <source>View All Next Up</source>
+        <translation>View All Next Up</translation>
+        <extracomment>Title for viewing all episodes available in the Next Up section</extracomment>
+    </message>
+    <message>
+        <source>Episode Images Next Up</source>
+        <translation>Episode Images Next Up</translation>
+        <extracomment>User Setting - Setting title</extracomment>
+    </message>
+    <message>
+        <source>What type of images to use for Episodes shown in the &apos;Next Up&apos; and &apos;Continue Watching&apos; sections.</source>
+        <translation>What type of images to use for Episodes shown in the &apos;Next Up&apos; and &apos;Continue Watching&apos; sections.</translation>
+        <extracomment>User Setting - Setting description</extracomment>
+    </message>
+    <message>
+        <source>Use Web Client Setting</source>
+        <translation>Use Web Client Setting</translation>
+        <extracomment>User Setting - Setting option title</extracomment>
+    </message>
+    <message>
+        <source>Use Episode Image</source>
+        <translation>Use Episode Image</translation>
+        <extracomment>User Setting - Setting option title</extracomment>
+    </message>
+    <message>
+        <source>Use Show Image</source>
+        <translation>Use Show Image</translation>
+        <extracomment>User Setting - Setting option title</extracomment>
+    </message>
 </context>
 <context>
     <name></name>

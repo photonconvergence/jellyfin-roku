@@ -2,17 +2,18 @@ name: roku-analysis
 
 on:
   pull_request:
-  push:
 
 env:
   BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
 
 jobs:
   static:
+    # don't run job on forks and prevent job from running twice when a PR pushes a new commit
+    if: github.repository == 'jellyfin/jellyfin-roku' && github.event_name != 'pull_request' || github.repository == 'jellyfin/jellyfin-roku' && github.event.pull_request.head.repo.full_name != github.event.pull_request.base.repo.full_name
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4
-      - uses: actions/setup-node@1e60f620b9541d16bece96c5465dc8ee9832be0b # v4
+      - uses: actions/setup-node@0a44ba7841725637a19e28fa30b79a866c81b0a6 # v4
         with:
           node-version: "lts/*"
           cache: "npm"
@@ -27,7 +28,7 @@ jobs:
         if: env.BRANCH_NAME == 'master'
         run: npm run build-prod
       - name: Setup Java
-        uses: actions/setup-java@99b8673ff64fbf99d8d325f52d9a5bdedb8483e9 # v4
+        uses: actions/setup-java@b36c23c0d998641eff861008f374ee103c25ac73 # v4
         with:
           distribution: "temurin"
           java-version: "21"

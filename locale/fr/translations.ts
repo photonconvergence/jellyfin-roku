@@ -6,7 +6,7 @@
     <name>default</name>
     <message>
         <source>192.168.1.100:8096 or https://example.com/jellyfin</source>
-        <translation>192.168.1.100:8096 ou https://example.com/jellyfin</translation>
+        <translation>192.168.1.100:8096 ou https://exemple.com/jellyfin</translation>
     </message>
     <message>
         <source>Cancel</source>
@@ -50,7 +50,7 @@
     </message>
     <message>
         <source>Please sign in</source>
-        <translation>Connectez-vous s&apos;il vous plaît</translation>
+        <translation>S&apos;il vous plaît connectez-vous</translation>
     </message>
     <message>
         <source>Search</source>
@@ -58,7 +58,7 @@
     </message>
     <message>
         <source>Server not found, is it online?</source>
-        <translation>Serveur non trouvé, est-il connecté à Internet ?</translation>
+        <translation>Le serveur est introuvable. Est-ce qu&apos;il est connecté au réseau ?</translation>
     </message>
     <message>
         <source>Shuffle</source>
@@ -595,7 +595,7 @@
     </message>
     <message>
         <source>Delete Saved</source>
-        <translation>Supprimer les valeurs enregistrées</translation>
+        <translation>Effacer la sauvegarde</translation>
     </message>
     <message>
         <source>Support Direct Play of MPEG-4 content. This may need to be disabled for playback of DIVX encoded video files.</source>
@@ -1207,7 +1207,7 @@
     </message>
     <message>
         <source>Remember Me?</source>
-        <translation>Se souvenir de moi&#xa0;?</translation>
+        <translation>Se souvenir de moi ?</translation>
         <extracomment>User Setting - Setting title</extracomment>
     </message>
     <message>
@@ -1279,6 +1279,56 @@
         <source>Ratings for how good a movie is</source>
         <translation>Notes pour dire que le film est bon</translation>
         <extracomment>User Setting - Setting description</extracomment>
+    </message>
+    <message>
+        <source>Welcome to version</source>
+        <translation>Bienvenue à la version</translation>
+        <extracomment>WhatsNewDialog title - Welcome to version 2.0.0</extracomment>
+    </message>
+    <message>
+        <source>To view a complete list of changes visit</source>
+        <translation>Pour consulter la liste complète des modifications, visitez</translation>
+        <extracomment>WhatsNewDialog body text preceding the changelog URL</extracomment>
+    </message>
+    <message>
+        <source>Show already watched episodes in &apos;Next Up&apos; sections.</source>
+        <translation>Voir les épisodes déjà vus dans la section &quot;À suivre&quot;.</translation>
+        <extracomment>User Setting - Setting description</extracomment>
+    </message>
+    <message>
+        <source>Rewatching Next Up</source>
+        <translation>Revoir tout ce qui est à suivre</translation>
+        <extracomment>User Setting - Setting title</extracomment>
+    </message>
+    <message>
+        <source>View All Next Up</source>
+        <translation>Voir tout ce qui est à suivre</translation>
+        <extracomment>Title for viewing all episodes available in the Next Up section</extracomment>
+    </message>
+    <message>
+        <source>Use Web Client Setting</source>
+        <translation>Utiliser les paramètres du client web</translation>
+        <extracomment>User Setting - Setting option title</extracomment>
+    </message>
+    <message>
+        <source>Use Episode Image</source>
+        <translation>Utiliser l&apos;image de l&apos;épisode</translation>
+        <extracomment>User Setting - Setting option title</extracomment>
+    </message>
+    <message>
+        <source>What type of images to use for Episodes shown in the &apos;Next Up&apos; and &apos;Continue Watching&apos; sections.</source>
+        <translation>Quel type d&apos;images utiliser pour les épisodes visibles dans les sections &quot;À suivre&quot; et &quot;Continuer la lecture&quot;.</translation>
+        <extracomment>User Setting - Setting description</extracomment>
+    </message>
+    <message>
+        <source>Use Show Image</source>
+        <translation>Utiliser l&apos;image de la série</translation>
+        <extracomment>User Setting - Setting option title</extracomment>
+    </message>
+    <message>
+        <source>Episode Images Next Up</source>
+        <translation>Images d&apos;épisodes à suivre</translation>
+        <extracomment>User Setting - Setting title</extracomment>
     </message>
 </context>
 <context>

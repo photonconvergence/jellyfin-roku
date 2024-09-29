@@ -1288,6 +1288,56 @@
         <translation>Die Quelldatei ist mit diesem Client vollständig kompatibel und die Sitzung empfängt die Datei ohne Änderungen.</translation>
         <extracomment>Direct play info box text in GetPlaybackInfoTask.brs</extracomment>
     </message>
+    <message>
+        <source>Welcome to version</source>
+        <translation>Willkommen bei der Version</translation>
+        <extracomment>WhatsNewDialog title - Welcome to version 2.0.0</extracomment>
+    </message>
+    <message>
+        <source>To view a complete list of changes visit</source>
+        <translation>Eine vollständige Liste der Änderungen findest du unter</translation>
+        <extracomment>WhatsNewDialog body text preceding the changelog URL</extracomment>
+    </message>
+    <message>
+        <source>Rewatching Next Up</source>
+        <translation>Als nächstes noch einmal ansehen</translation>
+        <extracomment>User Setting - Setting title</extracomment>
+    </message>
+    <message>
+        <source>Show already watched episodes in &apos;Next Up&apos; sections.</source>
+        <translation>Zeige bereits gesehene Episoden in der Rubrik &apos;Nächste Folge&apos; an.</translation>
+        <extracomment>User Setting - Setting description</extracomment>
+    </message>
+    <message>
+        <source>View All Next Up</source>
+        <translation>Weiter oben alle anzeigen</translation>
+        <extracomment>Title for viewing all episodes available in the Next Up section</extracomment>
+    </message>
+    <message>
+        <source>Episode Images Next Up</source>
+        <translation>Bilder der nächsten Episode</translation>
+        <extracomment>User Setting - Setting title</extracomment>
+    </message>
+    <message>
+        <source>Use Web Client Setting</source>
+        <translation>Web Client-Einstellung verwenden</translation>
+        <extracomment>User Setting - Setting option title</extracomment>
+    </message>
+    <message>
+        <source>What type of images to use for Episodes shown in the &apos;Next Up&apos; and &apos;Continue Watching&apos; sections.</source>
+        <translation>Welche Art von Bildern soll für die Episoden in den Abschnitten &quot;Weiter&quot; und &quot;Weiterschauen&quot; verwendet werden.</translation>
+        <extracomment>User Setting - Setting description</extracomment>
+    </message>
+    <message>
+        <source>Use Episode Image</source>
+        <translation>Episodenbild verwenden</translation>
+        <extracomment>User Setting - Setting option title</extracomment>
+    </message>
+    <message>
+        <source>Use Show Image</source>
+        <translation>Serienbild verwenden</translation>
+        <extracomment>User Setting - Setting option title</extracomment>
+    </message>
 </context>
 <context>
     <name></name>
