@@ -442,7 +442,26 @@ function getCodecProfiles() as object
             if di.CanDecodeAudio({ Codec: audioCodec, ChCnt: audioChannel }).Result
                 channelSupportFound = true
                 for each codecType in ["VideoAudio", "Audio"]
-                    if audioCodec = "opus" and codecType = "Audio"
+                    if audioCodec = "aac"
+                        codecProfiles.push({
+                            "Type": codecType,
+                            "Codec": audioCodec,
+                            "Conditions": [
+                                {
+                                    "Condition": "NotEquals",
+                                    "Property": "AudioProfile",
+                                    "Value": "Main",
+                                    "IsRequired": true
+                                },
+                                {
+                                    "Condition": "LessThanEqual",
+                                    "Property": "AudioChannels",
+                                    "Value": audioChannel,
+                                    "IsRequired": true
+                                }
+                            ]
+                        })
+                    else if audioCodec = "opus" and codecType = "Audio"
                         ' opus audio files not supported by roku
                     else
                         codecProfiles.push({
