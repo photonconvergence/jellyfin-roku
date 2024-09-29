@@ -637,7 +637,6 @@ sub onState(msg)
 
         ' Stop playback and exit player
         m.top.control = "stop"
-        m.top.backPressed = true
     else if m.top.state = "playing"
 
         ' Check if next episode is available
@@ -666,7 +665,8 @@ sub onState(msg)
     else if m.top.state = "finished"
         m.playbackTimer.control = "stop"
         ReportPlayback("finished")
-        m.top.backPressed = true ' force exit from video player to set TV back to SDR
+    else
+        m.log.warning("Unhandled state", m.top.state, m.playReported, m.playFinished)
     end if
     m.log.debug("end onState()", m.top.state)
 end sub
@@ -723,7 +723,6 @@ sub bufferCheck(msg)
 
             ' Stop playback and exit player
             m.top.control = "stop"
-            m.top.backPressed = true
         end if
     end if
 
