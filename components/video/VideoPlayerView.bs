@@ -1,7 +1,9 @@
 import "pkg:/source/utils/misc.bs"
 import "pkg:/source/utils/config.bs"
+import "pkg:/source/roku_modules/log/LogMixin.brs"
 
 sub init()
+    m.log = log.Logger("VideoPlayerView")
     ' Hide the overhang on init to prevent showing 2 clocks
     m.top.getScene().findNode("overhang").visible = false
     m.currentItem = m.global.queueManager.callFunc("getCurrentItem")
@@ -600,6 +602,7 @@ end sub
 '
 ' When Video Player state changes
 sub onState(msg)
+    m.log.debug("start onState()", m.top.state)
     if isValid(m.captionTask)
         m.captionTask.playerState = m.top.state + m.top.globalCaptionMode
     end if
@@ -608,12 +611,23 @@ sub onState(msg)
     m.osd.playbackState = m.top.state
 
     ' When buffering, start timer to monitor buffering process
-    if m.top.state = "buffering" and m.bufferCheckTimer <> invalid
+    if m.top.state = "buffering"
+        ' start buffer timer
+        if isValid(m.bufferCheckTimer)
+            m.bufferCheckTimer.control = "start"
+            m.bufferCheckTimer.ObserveField("fire", "bufferCheck")
+        end if
 
-        ' start timer
-        m.bufferCheckTimer.control = "start"
-        m.bufferCheckTimer.ObserveField("fire", "bufferCheck")
+        ' update server if needed
+        if not m.playReported
+            m.playReported = true
+            ReportPlayback("start")
+        end if
     else if m.top.state = "error"
+        m.log.error(m.top.errorCode, m.top.errorMsg, m.top.errorStr, m.top.errorCode)
+
+        print m.top.errorInfo
+
         if not m.playReported and m.top.transcodeAvailable
             m.top.retryWithTranscoding = true ' If playback was not reported, retry with transcoding
         else
@@ -623,7 +637,6 @@ sub onState(msg)
 
         ' Stop playback and exit player
         m.top.control = "stop"
-        m.top.backPressed = true
     else if m.top.state = "playing"
 
         ' Check if next episode is available
@@ -649,15 +662,21 @@ sub onState(msg)
         m.playbackTimer.control = "stop"
         ReportPlayback("stop")
         m.playReported = false
+    else if m.top.state = "finished"
+        m.playbackTimer.control = "stop"
+        ReportPlayback("finished")
+    else
+        m.log.warning("Unhandled state", m.top.state, m.playReported, m.playFinished)
     end if
-
+    m.log.debug("end onState()", m.top.state)
 end sub
 
 '
 ' Report playback to server
 sub ReportPlayback(state = "update" as string)
-
     if m.top.position = invalid then return
+
+    m.log.debug("start ReportPlayback()", state, int(m.top.position))
 
     params = {
         "ItemId": m.top.id,
@@ -677,6 +696,8 @@ sub ReportPlayback(state = "update" as string)
     playstateTask = m.global.playstateTask
     playstateTask.setFields({ status: state, params: params })
     playstateTask.control = "RUN"
+
+    m.log.debug("end ReportPlayback()", state, int(m.top.position))
 end sub
 
 '
@@ -702,7 +723,6 @@ sub bufferCheck(msg)
 
             ' Stop playback and exit player
             m.top.control = "stop"
-            m.top.backPressed = true
         end if
     end if
 
