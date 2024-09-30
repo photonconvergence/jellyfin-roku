@@ -610,18 +610,11 @@ sub onState(msg)
     ' Pass video state into OSD
     m.osd.playbackState = m.top.state
 
-    ' When buffering, start timer to monitor buffering process
     if m.top.state = "buffering"
-        ' start buffer timer
+        ' When buffering, start timer to monitor buffering process
         if isValid(m.bufferCheckTimer)
             m.bufferCheckTimer.control = "start"
             m.bufferCheckTimer.ObserveField("fire", "bufferCheck")
-        end if
-
-        ' update server if needed
-        if not m.playReported
-            m.playReported = true
-            ReportPlayback("start")
         end if
     else if m.top.state = "error"
         m.log.error(m.top.errorCode, m.top.errorMsg, m.top.errorStr, m.top.errorCode)
