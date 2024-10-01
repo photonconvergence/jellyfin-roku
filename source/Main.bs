@@ -248,11 +248,13 @@ sub Main (args as dynamic) as void
                 currentScene.itemContent.json = api.users.GetItem(m.global.session.user.id, currentScene.itemContent.id)
                 movieMetaData = ItemMetaData(currentScene.itemContent.id)
 
-                ' Redraw movie poster
-                currentScene.newPosterImageURI = movieMetaData.posterURL
+                if isValid(movieMetaData)
+                    ' Redraw movie poster
+                    currentScene.newPosterImageURI = movieMetaData.posterURL
 
-                ' Set updated starting point for the queue item
-                m.global.queueManager.callFunc("setTopStartingPoint", currentScene.itemContent.json.UserData.PlaybackPositionTicks)
+                    ' Set updated starting point for the queue item
+                    m.global.queueManager.callFunc("setTopStartingPoint", currentScene.itemContent.json.UserData.PlaybackPositionTicks)
+                end if
             end if
 
             stopLoadingSpinner()
