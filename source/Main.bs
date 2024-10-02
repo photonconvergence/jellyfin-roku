@@ -580,36 +580,41 @@ sub Main (args as dynamic) as void
             ' If a button is selected, we have some determining to do
             btn = getButton(msg)
             group = sceneManager.callFunc("getActiveScene")
+
             if isValid(btn) and btn.id = "play-button"
+                if not isValid(group) then return
+
                 ' User chose Play button from movie detail view
                 startLoadingSpinner()
                 ' Check if a specific Audio Stream was selected
                 audio_stream_idx = 0
-                if isValid(group) and isValid(group.selectedAudioStreamIndex)
+                if isValid(group.selectedAudioStreamIndex)
                     audio_stream_idx = group.selectedAudioStreamIndex
                 end if
 
-                group.itemContent.selectedAudioStreamIndex = audio_stream_idx
-                group.itemContent.id = group.selectedVideoStreamId
+                if isValid(group.itemContent)
+                    group.itemContent.selectedAudioStreamIndex = audio_stream_idx
+                    group.itemContent.id = group.selectedVideoStreamId
 
-                ' Display playback options dialog
-                if group.itemContent.json.userdata.PlaybackPositionTicks > 0
-                    m.global.queueManager.callFunc("hold", group.itemContent)
-                    playbackOptionDialog(group.itemContent.json.userdata.PlaybackPositionTicks, group.itemContent.json)
-                else
-                    m.global.queueManager.callFunc("clear")
-                    m.global.queueManager.callFunc("push", group.itemContent)
-                    m.global.queueManager.callFunc("playQueue")
+                    ' Display playback options dialog
+                    if group.itemContent.json.userdata.PlaybackPositionTicks > 0
+                        m.global.queueManager.callFunc("hold", group.itemContent)
+                        playbackOptionDialog(group.itemContent.json.userdata.PlaybackPositionTicks, group.itemContent.json)
+                    else
+                        m.global.queueManager.callFunc("clear")
+                        m.global.queueManager.callFunc("push", group.itemContent)
+                        m.global.queueManager.callFunc("playQueue")
+                    end if
                 end if
 
-                if isValid(group) and isValid(group.lastFocus) and isValid(group.lastFocus.id) and group.lastFocus.id = "main_group"
+                if isValid(group.lastFocus) and isValid(group.lastFocus.id) and group.lastFocus.id = "main_group"
                     buttons = group.findNode("buttons")
                     if isValid(buttons)
                         group.lastFocus = group.findNode("buttons")
                     end if
                 end if
 
-                if isValid(group) and isValid(group.lastFocus)
+                if isValid(group.lastFocus)
                     group.lastFocus.setFocus(true)
                 end if
 
