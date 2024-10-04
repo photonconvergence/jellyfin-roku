@@ -38,28 +38,31 @@ function ItemPostPlaybackInfo(id as string, mediaSourceId = "" as string, audioT
     end if
 
     if audioTrackIndex > -1
-        params.AudioStreamIndex = audioTrackIndex
-
-        ' force the server to transcode AAC profiles we don't support to MP3 instead of the usual AAC
-        ' TODO: Remove this after server adds support for transcoding AAC from one profile to another
         selectedAudioStream = m.global.session.video.json.MediaStreams[audioTrackIndex]
 
-        if LCase(selectedAudioStream.Codec) = "aac"
-            if LCase(selectedAudioStream.Profile) = "main" or LCase(selectedAudioStream.Profile) = "he-aac"
-                for each rule in deviceProfile.TranscodingProfiles
-                    if rule.Container = "ts" or rule.Container = "mp4"
-                        if rule.AudioCodec = "aac"
-                            rule.AudioCodec = "mp3"
-                        else if rule.AudioCodec.Left(4) = "aac,"
-                            rule.AudioCodec = mid(rule.AudioCodec, 5)
+        if selectedAudioStream <> invalid
+            params.AudioStreamIndex = audioTrackIndex
 
-                            if rule.AudioCodec.Left(3) <> "mp3"
-                                rule.AudioCodec = "mp3," + rule.AudioCodec
+            ' force the server to transcode AAC profiles we don't support to MP3 instead of the usual AAC
+            ' TODO: Remove this after server adds support for transcoding AAC from one profile to another
+            if LCase(selectedAudioStream.Codec) = "aac"
+                if LCase(selectedAudioStream.Profile) = "main" or LCase(selectedAudioStream.Profile) = "he-aac"
+                    for each rule in deviceProfile.TranscodingProfiles
+                        if rule.Container = "ts" or rule.Container = "mp4"
+                            if rule.AudioCodec = "aac"
+                                rule.AudioCodec = "mp3"
+                            else if rule.AudioCodec.Left(4) = "aac,"
+                                rule.AudioCodec = mid(rule.AudioCodec, 5)
+
+                                if rule.AudioCodec.Left(3) <> "mp3"
+                                    rule.AudioCodec = "mp3," + rule.AudioCodec
+                                end if
                             end if
                         end if
-                    end if
-                end for
+                    end for
+                end if
             end if
+
         end if
     end if
 
