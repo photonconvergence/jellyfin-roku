@@ -89,7 +89,9 @@ sub LoadItems_AddVideoContent(video as object, mediaSourceId as dynamic, audio_s
             video.length = meta.json.MediaSources[0].RunTimeTicks / 10000000
         end if
     end if
-    video.MaxVideoDecodeResolution = [meta.json.MediaSources[0].MediaStreams[0].Width, meta.json.MediaSources[0].MediaStreams[0].Height]
+    if isValid(meta.json.MediaSources[0]) and isValid(meta.json.MediaSources[0].MediaStreams[0])
+        video.MaxVideoDecodeResolution = [meta.json.MediaSources[0].MediaStreams[0].Width, meta.json.MediaSources[0].MediaStreams[0].Height]
+    end if
 
     subtitle_idx = m.top.selectedSubtitleIndex
     videotype = LCase(meta.type)
